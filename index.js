@@ -2,8 +2,8 @@ const express = require('express');
 const { validationResult, check, email } = require('express-validator');
 var hpp = require('hpp');
 const app = express();
-
-app.use(hpp());
+//another way to make with joi
+app.use(hpp());//hpp always get last email parameter
 
 app.get('/register', check('email').isEmail(), (req, res) => {
     const errors = validationResult(req);
